@@ -27,6 +27,11 @@ This code plots the following response variables:
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  
 
+### Seed weights - field collected  
+***data.phenotype/tall_short_seedweight.csv***  
+***R.phenotype/SeedWeight.R***  
+***output.phenotype/SeedWeight.pdf***  
+
 ## SNP dataset and figures  
 
 1) ***inds/***  
