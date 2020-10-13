@@ -23,6 +23,8 @@ This code plots the following response variables:
 * stem density  
 * Total biomass  
 * Number of seeded plants  
+* Survival in tall and short zones  
+
 ***data.phenotype/tall.short_fieldexp_100617_removebiomassoutliers.csv***  
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  

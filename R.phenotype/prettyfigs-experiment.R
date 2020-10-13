@@ -122,6 +122,7 @@ points(x=c(0.75,1.2),y=xbar[2,2:3],pch=c(19,21),col="black",cex=2,bg=c("black","
 mtext(c("Short","Tall"),at=c(0.75,1.2),side=1,line=0.75)
 
 ### survival
+library(survival)
 survival <- read.csv("data.phenotype/Tall.Short_field_survivalanalysis_011618.csv")
 
 (fit1 <- survfit(Surv(as.numeric(survival$Week.to.death), survival$Status_Dec_survive.0) ~ Transplant.Zone, data=survival))
