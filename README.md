@@ -28,6 +28,7 @@ This code plots the following response variables:
 ***output.phenotype/prettyfigs-experiment.png***  
 
 ### Seed weights - field collected  
+This code includes 2-way ANOVA of origin site and origin zone on seed weights and the posthoc tests per marsh. Also, average plant height in common garden experiment is regressed against average seed weight for each zoneXsite combination (n=6)  
 ***data.phenotype/tall_short_seedweight.csv***  
 ***R.phenotype/SeedWeight.R***  
 ***output.phenotype/SeedWeight.pdf***  
