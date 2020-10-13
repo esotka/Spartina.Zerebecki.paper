@@ -120,4 +120,27 @@ points(x=c(0.75,1.2),y=xbar[1,2:3],pch=c(21,19),col="red",cex=2,bg=c("white","re
 segments(.75,xbar[2,2],1.2,xbar[2,3],col="black")
 points(x=c(0.75,1.2),y=xbar[2,2:3],pch=c(19,21),col="black",cex=2,bg=c("black","white"))
 mtext(c("Short","Tall"),at=c(0.75,1.2),side=1,line=0.75)
+
+### survival
+survival <- read.csv("data.phenotype/Tall.Short_field_survivalanalysis_011618.csv")
+
+(fit1 <- survfit(Surv(as.numeric(survival$Week.to.death), survival$Status_Dec_survive.0) ~ Transplant.Zone, data=survival))
+
+(fit1 <- survfit(Surv(as.numeric(survival$Week.to.death), survival$Status_Dec_survive.0) ~ Transplant.Zone, data=survival))
+
+
+plot(x=fit1$time,y=fit1$surv,xlab="Weeks",ylab="",ylim=c(0,1),xlim=c(0,30),type="n")
+mtext("F. Survivorship",cex=.9,line=.5)
+# short origin
+n = as.numeric(fit1$strata[1])
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n]),col="red",cex=1,pch=19,type="b")
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])+c(0,fit1$std.err[1:n]),type="l",col="red",lty="dotted")
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])-c(0,fit1$std.err[1:n]),type="l",col="red",lty="dotted")
+# tall origin
+n2 = as.numeric(fit1$strata[2])
+points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2]),col="black",cex=1,pch=19,type="b")
+text(x=c(20,20),y=c(0.77,0.14),c("Short-zone","Tall-zone"),col=c("red","black"),cex=1.5)
+points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2])+c(0,fit1$std.err[n+1:n2]),type="l",col="black",lty="dotted")
+points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2])-c(0,fit1$std.err[n+1:n2]),type="l",col="black",lty="dotted")
 dev.off()
+
