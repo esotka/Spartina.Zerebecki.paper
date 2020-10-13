@@ -1,14 +1,39 @@
-# spartina.genetics
+# Spartina.Zerebecki.paper
 
 These are the associated files and R code for the phenotypic data and SNP dataset from ***Repeated genetic divergence across tidal elevation in a foundation plant species*** Collaboration with Robyn Zerebecki, Randall Hughes, Torrance Hanley, Chris Nice and others.
 
-## data
+## Phenotypic data and figures  
+
+### Common-garden plant height  
+These are analyses of plants kept in the greenhouse.  
+***data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx***  
+***R.phenotype/CG plot.R***  
+***output.phenotype/CG plot.pdf***  
+
+### Greenhouse final heights vs field collected heights  
+***data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx***  
+***data.phenotype/tall.short_fieldsurvey_2015.xlsx***
+***R.phenotype/Greenhouse.vs.Field.R***
+***output.phenotype/Greenhouse.vs.Field.pdf***
+
+### Field experiment phenotypes  
+This code plots the following response variables:  
+* max plant height of survivors  
+* above to belowground ratio  
+* stem density  
+* Total biomass  
+* Number of seeded plants  
+***data.phenotype/tall.short_fieldexp_100617_removebiomassoutliers.csv***  
+***R.phenotype/prettyfigs-experiment.R***  
+***output.phenotype/prettyfigs-experiment.png***  
+
+## SNP dataset and figures  
 
 1) ***inds/***  
-Description: a set of files with individuals used in the analyses.  
-a. ***allpops_individualIDs_subset.csv*** - set of 309 individuals - all sites.  
-b. ***indIDS.T.S.POPS.txt*** - set of six marshes with tall-vs-short comparisons.  
-c. ***inds.FL*** ***inds.RISRIT*** ***inds.SBITBI*** ***inds.SFBTFB*** ***inds.SWSSWT*** ***inds.WESWET*** - six marshes with tall-vs-short comparisons  
+Description: a set of files with individuals used in the SNP analyses.  
+* ***allpops_individualIDs_subset.csv*** - set of 309 individuals - all sites.  
+* ***indIDS.T.S.POPS.txt*** - set of six marshes with tall-vs-short comparisons.  
+* ***inds.FL*** ***inds.RISRIT*** ***inds.SBITBI*** ***inds.SFBTFB*** ***inds.SWSSWT*** ***inds.WESWET*** - six marshes with tall-vs-short comparisons  
 
 2) ***loci.subset2.txt***  
 Description: names of loci used in this study  
@@ -36,9 +61,6 @@ Description: est.ml files from the "angsd -dosaf 1 -gl 1". "For diploid single s
 
 10) ***rda/***  
 Description: beagle file + list of individuals + list of loci for each of the 6 marshes (tall vs short)  
-
-11) ***misc/phenotypeFigs.zip***  
-Description: Experiment and greenhouse dataset to make figures in main text.  
 
 ### Figure: PCAs  
 Based on genotype likelihoods of individuals embedded in the .mpgl file.  Uses the prcomp() to generate PCAs. there are four versions:  
