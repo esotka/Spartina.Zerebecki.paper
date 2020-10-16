@@ -134,14 +134,14 @@ plot(x=fit1$time,y=fit1$surv,xlab="Weeks",ylab="",ylim=c(0,1),xlim=c(0,30),type=
 mtext("F. Survivorship",cex=.9,line=.5)
 # short origin
 n = as.numeric(fit1$strata[1])
-points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n]),col="red",cex=1,pch=19,type="b")
-points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])+c(0,fit1$std.err[1:n]),type="l",col="red",lty="dotted")
-points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])-c(0,fit1$std.err[1:n]),type="l",col="red",lty="dotted")
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n]),col="grey",cex=1,pch=19,type="b")
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])+c(0,fit1$std.err[1:n]),type="l",col="grey",lty="dotted")
+points(x=c(0,fit1$time[1:n]),y=c(1,fit1$surv[1:n])-c(0,fit1$std.err[1:n]),type="l",col="grey",lty="dotted")
 # tall origin
 n2 = as.numeric(fit1$strata[2])
 points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2]),col="black",cex=1,pch=19,type="b")
-text(x=c(20,20),y=c(0.77,0.14),c("Short-zone","Tall-zone"),col=c("red","black"),cex=1.5)
 points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2])+c(0,fit1$std.err[n+1:n2]),type="l",col="black",lty="dotted")
 points(x=c(0,fit1$time[n+1:n2]),y=c(1,fit1$surv[n+1:n2])-c(0,fit1$std.err[n+1:n2]),type="l",col="black",lty="dotted")
+text(x=c(20,20),y=c(0.77,0.14),c("Short-zone","Tall-zone"),col=c("grey","black"),cex=1.5)
 dev.off()
 

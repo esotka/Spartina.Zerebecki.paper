@@ -1,13 +1,10 @@
 ### plant height - repeated measures
 rm(list=ls())
-library(readxl)
 library(reshape)
-dat <- read_xlsx('data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx',sheet=5)
-dat$`Max Height` <- as.numeric(dat$`Max Height`)
-dat$`Julian Day` <- as.factor(dat$`Julian Day`)
-dat$`Tall/Short` <- as.factor(dat$`Tall/Short`)
-dat <- dat[!is.na(dat$`Max Height`),]
-tmp <- data.frame(dat[,c("Max Height","Tall/Short","Julian Day")])
+dat <- read.csv('data.phenotype/CG_final.csv')
+dat.surv <- dat[dat$Survival==1,]
+dat.surv$Julian.Day <- as.factor(dat.surv$Julian.Day)
+tmp <- data.frame(dat.surv[,c("Max.Height","Tall.Short","Julian.Day")])
 tmp <- melt(tmp)
 xbar <- cast(tmp,Julian.Day~Tall.Short,mean,na.rm=T)
 stdev <- cast(tmp,Julian.Day~Tall.Short,sd,na.rm=T)

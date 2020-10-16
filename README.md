@@ -4,17 +4,41 @@ These are the associated files and R code for the phenotypic data and SNP datase
 
 ## Phenotypic data and figures  
 
-### Common-garden plant height  
-These are analyses of plants kept in the greenhouse.  
-***data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx***  
+### Common-garden experimental analyses  
+Survivorship  
+***data.phenotype/CG_survival_final.csv***  
+***R/phenotype/CG.survival.R***  
+
+Timeline of maximum plant height kept in the greenhouse.  
+***data.phenotype/CG_final.csv***  
 ***R.phenotype/CG plot.R***  
 ***output.phenotype/CG plot.pdf***  
+***R.phenotype/CG plot.ANOVA.R***  
+
+Timeline of stem density kept in the greenhouse.  
+***data.phenotype/CG_final.csv***  
+***R.phenotype/CG plot.ANOVA.R***  
+
+Timeline of number of leaves of plants kept in the greenhouse.  
+***data.phenotype/CG_final.csv***  
+***R.phenotype/CG plot.ANOVA.R***  
+
+Average heights of all stems  
+***data.phenotype/CG_avgheights_final.csv***  
+***R.phenotype/CG plot.ANOVA.R***  
+
+### Seed weights - field collected  
+This code includes 2-way ANOVA of origin site and origin zone on seed weights and the posthoc tests per marsh. Also, average plant height in common garden experiment is regressed against average seed weight for each zoneXsite combination (n=6)  
+***data.phenotype/tall_short_seedweight.csv***  
+***data.phenotype/data.phenotype/CG_final.csv***  
+***R.phenotype/SeedWeight.R***  
+***output.phenotype/SeedWeight.pdf***  
 
 ### Greenhouse final heights vs field collected heights  
 ***data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx***  
-***data.phenotype/tall.short_fieldsurvey_2015.xlsx***
-***R.phenotype/Greenhouse.vs.Field.R***
-***output.phenotype/Greenhouse.vs.Field.pdf***
+***data.phenotype/tall.short_fieldsurvey_2015.csv***
+***R.phenotype/Greenhouse.vs.Field.R***  
+***output.phenotype/Greenhouse.vs.Field.pdf***  
 
 ### Field experiment phenotypes  
 This code plots the following response variables:  
@@ -28,12 +52,6 @@ This code plots the following response variables:
 ***data.phenotype/tall.short_fieldexp_100617_removebiomassoutliers.csv***  
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  
-
-### Seed weights - field collected  
-This code includes 2-way ANOVA of origin site and origin zone on seed weights and the posthoc tests per marsh. Also, average plant height in common garden experiment is regressed against average seed weight for each zoneXsite combination (n=6)  
-***data.phenotype/tall_short_seedweight.csv***  
-***R.phenotype/SeedWeight.R***  
-***output.phenotype/SeedWeight.pdf***  
 
 ## SNP dataset and figures  
 

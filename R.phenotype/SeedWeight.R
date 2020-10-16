@@ -1,5 +1,5 @@
 ## analysis of field-collected seed weight.  
-
+library(lattice)
 rm(list=ls())
 dat <- read.csv('data.phenotype/tall_short_seedweight.csv')
 m <- lm(Individual.Seed.Weight..mg.~Site*Form,data=dat)
@@ -25,14 +25,11 @@ dev.off()
 library(readxl)
 library(reshape)
 ### common garden data
-dat <- read_xlsx('data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx',sheet=5)
-dat$`Max Height` <- as.numeric(dat$`Max Height`)
-dat$`Julian Day` <- as.factor(dat$`Julian Day`)
-dat$`Tall/Short` <- as.factor(dat$`Tall/Short`)
-dat <- dat[!is.na(dat$`Max Height`),]
-tmp <- data.frame(dat[,c("Max Height","Tall/Short","Site","Julian Day")])
+dat <- read.csv('data.phenotype/CG_final.csv')
+dat.surv <- dat[dat$Survival==1 & dat$Julian.Day=="428",]
+tmp <- data.frame(dat.surv[,c("Max.Height","Tall.Short","Julian.Day","Site")])
 tmp <- melt(tmp)
-xbar.ht <- cast(tmp[tmp$Julian.Day=="428",],~Site+Tall.Short,mean,na.rm=T)
+xbar.ht <- cast(tmp,~Site+Tall.Short,mean,na.rm=T)
 
 ### seed weight
 dat <- read.csv('data.phenotype/tall_short_seedweight.csv')

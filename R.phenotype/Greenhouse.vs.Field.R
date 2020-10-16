@@ -2,24 +2,20 @@
 
 ### plant height - CG
 rm(list=ls())
-library(readxl)
 library(reshape)
-dat <- read_xlsx('data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx',sheet=5)
-dat$`Max Height` <- as.numeric(dat$`Max Height`)
-dat$`Julian Day` <- as.factor(dat$`Julian Day`)
-dat$`Tall/Short` <- as.factor(dat$`Tall/Short`)
-dat <- dat[!is.na(dat$`Max Height`),]  # remove missing data
-dat <- dat[dat$`Julian Day`=="428",]
-xbar.CG <- tapply(dat$`Max Height`,dat$`Tall/Short`,mean)
-sd.CG <- tapply(dat$`Max Height`,dat$`Tall/Short`,sd)
-n.CG <- table(dat$`Tall/Short`)
+dat <- read.csv('data.phenotype/CG_final.csv')
+dat.surv <- dat[dat$Survival==1 & dat$Julian.Day=="428",]
+dat.surv$Julian.Day <- as.factor(dat.surv$Julian.Day)
+xbar.CG <- tapply(dat.surv$Max.Height,dat.surv$Tall.Short,mean)
+sd.CG <- tapply(dat.surv$Max.Height,dat.surv$Tall.Short,sd)
+n.CG <- table(dat.surv$Tall.Short)
 se.CG <- sd.CG/sqrt(n.CG)
 
 ### plant height - field survey
-dat2 <- read_xlsx('data.phenotype/tall.short_fieldsurvey_2015.xlsx',sheet=2)
+dat2 <- read.csv('data.phenotype/tall.short_fieldsurvey_2015.csv')
 dat2$Zone <- as.factor(dat2$Zone)
-xbar.FS <- tapply(dat2$`AVERAGE HT`,dat2$Zone,mean)
-sd.FS <- tapply(dat2$`AVERAGE HT`,dat2$Zone,sd)
+xbar.FS <- tapply(dat2$AVERAGE.HT,dat2$Zone,mean)
+sd.FS <- tapply(dat2$AVERAGE.HT,dat2$Zone,sd)
 n.FS <- table(dat2$Zone)
 se.FS <- sd.FS/sqrt(n.FS)
 
@@ -28,7 +24,7 @@ out <- data.frame(
   n= c(as.numeric(n.CG),as.numeric(n.FS)),
   se=c(as.numeric(se.CG),as.numeric(se.FS)))
 rownames(out) <- c("CG-short","CG-tall","FS-short","FS-tall")
-
+print(out)
 
 pdf("output.phenotype/Greenhouse.vs.Field.pdf",height=4,width=3)
 x <- c(0.75,0.75,1.2,1.2)
