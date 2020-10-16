@@ -35,7 +35,7 @@ This code includes 2-way ANOVA of origin site and origin zone on seed weights an
 ***output.phenotype/SeedWeight.pdf***  
 
 ### Greenhouse final heights vs field collected heights  
-***data.phenotype/CG_tall.short_repeatmeasure110116_final.xlsx***  
+***data.phenotype/CG_final.csv***  
 ***data.phenotype/tall.short_fieldsurvey_2015.csv***
 ***R.phenotype/Greenhouse.vs.Field.R***  
 ***output.phenotype/Greenhouse.vs.Field.pdf***  
