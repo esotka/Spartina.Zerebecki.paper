@@ -33,3 +33,4 @@ model <- glm(Flower.yes.1~ Transplant.Zone * Origin.Zone,family=binomial(link="l
 print(Anova(model))
 
 
+
