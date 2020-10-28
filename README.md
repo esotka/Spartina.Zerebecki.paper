@@ -48,10 +48,18 @@ This code plots the following response variables:
 * Total biomass  
 * Number of seeded plants  
 * Survival in tall and short zones  
+* Flowering in tall and short zones  
 
 ***data.phenotype/tall.short_fieldexp_100617_removebiomassoutliers.csv***  
+***data.phenotype/tall.short_flowertotals_102020.csv***  
+***data.phenotype/Tall.Short_field_survivalanalysis_011618.csv***  
+***R.phenotype/field.experiment.analysis.R***  
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  
+
+This code generates the aster analysis (surv + seed # = fitness)  
+***R.phenotype/aster model.R***  
+***output.phenotype/aster model.png***  
 
 ## SNP dataset and figures  
 

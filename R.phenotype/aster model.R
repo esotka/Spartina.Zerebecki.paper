@@ -62,7 +62,6 @@ sh.se <- sh.sd/sqrt(sh.n)
 ta <- redat[redat$Transplant.Zone=="Tall",]
 out.ta0 <- aster(resp ~ varb + fit, pred, fam, varb, id, root, data = ta)
 out.ta1 <- aster(resp ~ varb + fit:(Origin.Zone), pred, fam, varb, id, root, data = ta)
-anova(out.sh0,out.sh1)
 p1 <- predict(out.ta1)
 ta.xbar <- tapply(p1,ta$Origin.Zone,mean)
 ta.sd <-tapply(p1,ta$Origin.Zone,sd)
@@ -73,7 +72,12 @@ out <- data.frame(Transplant.Zone=c("Short","Short","Tall","Tall"),
            Origin.Zone=c(names(sh.xbar),names(ta.xbar)),
            xbar=c(sh.xbar,ta.xbar),n=c(sh.n,ta.n),se=c(sh.se,ta.se))
 
-pdf('output.phenotype/aster model.pdf',width=5,height=6)
+anova(out.sh0,out.sh1)
+anova(out.ta0,out.ta1)
+
+
+
+png('output.phenotype/aster model.png',width=5,height=6,units="in",res=700)
 plot(x=c(0.75,1.2),y=out$xbar[1:2],xlim=c(0.6,1.4),ylim=c(0,10),
      type="n",xaxt="n",xlab="",ylab="Expected fitness")
 #mtext("A. Maximum height (cm)",cex=.9,line=.5)

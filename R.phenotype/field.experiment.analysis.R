@@ -27,9 +27,9 @@ print(anova(coxfit))
 
 ### Field experiment - flowering
 library(car)
-flower <- read.csv("data.phenotype/tall.short_flowertotals_060818_corrected.csv")
-sflower <- subset(flower, Surivial == "1")
-model <- glm(Flower.yes.1~ Transplant.Zone * Origin.Zone,family=binomial(link="logit"), data=sflower) 
+flower <- read.csv("data.phenotype/tall.short_flowertotals_102020.csv")
+sflower <- subset(flower, Surivial1 == "1")
+model <- glm(Flower1~ Transplant.Zone * Origin.Zone,family=binomial(link="logit"), data=sflower) 
 print(Anova(model))
 
 
