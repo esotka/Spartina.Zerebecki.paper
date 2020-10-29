@@ -17,8 +17,12 @@ print("FJ")
 m <- lm(Individual.Seed.Weight..mg.~Form,data=dat[dat$Site=="Fort Johnson",])
 print(anova(m))
 
-pdf('output.phenotype/SeedWeight.pdf')
-print(bwplot(Individual.Seed.Weight..mg.~Site_Form,data=dat))
+pdf('output.phenotype/SeedWeight.pdf',height=4,width=8)
+print(bwplot(Individual.Seed.Weight..mg.~Form | Site,data=dat,ylab="Seed weight (mg)",
+             par.settings=list(box.rectangle=list(col="black"),
+                               box.umbrella=list(col="black"),
+                               plot.symbol=list(col="black")),
+             strip=strip.custom(bg="white")))
 dev.off()
 
 #### correlation of seed weight and plant height (common garden experiment)
