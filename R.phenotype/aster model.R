@@ -77,18 +77,18 @@ anova(out.ta0,out.ta1)
 
 
 
-png('output.phenotype/aster model.png',width=5,height=6,units="in",res=700)
+png('output.phenotype/aster model.png',width=4,height=5,units="in",res=700)
 plot(x=c(0.75,1.2),y=out$xbar[1:2],xlim=c(0.6,1.4),ylim=c(0,10),
-     type="n",xaxt="n",xlab="",ylab="Expected fitness")
-#mtext("A. Maximum height (cm)",cex=.9,line=.5)
+     type="n",xaxt="n",xlab="",ylab="Composite fitness")
 # short origin
-#arrows(x0=c(0.75,1.2),y0=as.numeric(out$xbar[c(1,3)]-out$se[c(1,3)]),x1=c(.75,1.2),y1=as.numeric(out$xbar[c(1,3)]+out$xbar[c(1,3)]),col="red",length=.08,angle=90,code=3)
 segments(x0 = .75,y0 = out$xbar[1],x1 = 1.2,y1 = out$xbar[3],col="red")
 points(x=c(0.75,1.2),y=out$xbar[c(1,3)],pch=c(21,19),col="red",cex=2,bg=c("white","red"))
 # tall origin
-#arrows(x0=c(0.75,1.2),y0=as.numeric(xbar[2,2:3]-s.se[1,2:3]),x1=c(0.75,1.2),y1=as.numeric(xbar[2,2:3]+s.se[1,2:3]),col="black",length=.08,angle=90,code=3)
 segments(.75,out$xbar[2],1.2,out$xbar[4],col="black")
 points(x=c(0.75,1.2),y=out$xbar[c(2,4)],pch=c(19,21),col="black",cex=2,bg=c("black","white"))
 mtext(c("Short","Tall"),at=c(0.75,1.2),side=1,line=0.75)
+mtext("Transplant zone",at=1,side=1,line=2)
+text(1.1,5,"Short origin",col="red")
+text(0.9,1,"Tall origin",col="black")
 dev.off()
 
