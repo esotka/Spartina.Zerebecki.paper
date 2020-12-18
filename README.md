@@ -1,6 +1,6 @@
-# Spartina.Zerebecki.paper
+# Spartina local adaptation paper
 
-These are the associated files and R code for the phenotypic data and SNP dataset from ***Repeated genetic divergence across tidal elevation in a foundation plant species*** Collaboration with Robyn Zerebecki, Randall Hughes, Torrance Hanley, Chris Nice and others.
+These are the associated files and R code for the phenotypic data and SNP dataset from ***Repeated genetic divergence across tidal elevation in a foundation plant species*** 
 
 ## Phenotypic data and figures  
 
