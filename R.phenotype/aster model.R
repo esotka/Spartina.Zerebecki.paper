@@ -33,11 +33,16 @@ anova(out2,out3) # Transplant Zone effect
 anova(out3,out4) ## additve vs interactive model
 
 ### version with Blocked (Transplant site)
-out1b <- aster(resp ~ varb + Transplant.Site + fit:(Transplant.Zone), pred, fam, varb, id, root, data = redat)
-out2b <- aster(resp ~ varb + Transplant.Site + fit:(Origin.Zone), pred, fam, varb, id, root, data = redat)
-out3b <- aster(resp ~ varb + Transplant.Site + fit:(Transplant.Zone + Origin.Zone), pred, fam, varb, id, root, data = redat)
-out4b <- aster(resp ~ varb + Transplant.Site + fit:(Transplant.Zone * Origin.Zone), pred, fam, varb, id, root, data = redat)
+out0 <- aster(resp ~ varb + fit, pred, fam, varb, id, root, data = redat)
+out0b <- aster(resp ~ varb + Origin.Site + fit, pred, fam, varb, id, root, data = redat)
+out0c <- aster(resp ~ varb + Transplant.Site + fit, pred, fam, varb, id, root, data = redat)
+out1b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Transplant.Zone), pred, fam, varb, id, root, data = redat)
+out2b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Origin.Zone), pred, fam, varb, id, root, data = redat)
+out3b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Transplant.Zone + Origin.Zone), pred, fam, varb, id, root, data = redat)
+out4b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Transplant.Zone * Origin.Zone), pred, fam, varb, id, root, data = redat)
 
+anova(out0,out0b) # Origin Site effect
+anova(out0,out0c) # Origin Zone effect
 anova(out1b,out3b) # Origin Zone effect
 anova(out2b,out3b) # Transplant Zone effect
 anova(out3b,out4b) ## additve vs interactive model
