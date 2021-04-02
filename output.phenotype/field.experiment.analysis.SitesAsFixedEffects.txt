@@ -1,0 +1,91 @@
+[1] "response = max.Height"
+Analysis of Variance Table
+
+Response: y
+                             Df Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2    799  399.44  1.6413 0.1962326    
+Origin.Site                   2   1311  655.50  2.6935 0.0700154 .  
+Transplant.Zone               1    292  292.27  1.2010 0.2744017    
+Origin.Zone                   1   3085 3085.18 12.6772 0.0004592 ***
+Transplant.Zone:Origin.Zone   1   1873 1872.70  7.6950 0.0060435 ** 
+Residuals                   207  50377  243.36                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = Average.Height"
+Analysis of Variance Table
+
+Response: y
+                             Df  Sum Sq Mean Sq F value   Pr(>F)   
+Transplant.Site               2   150.9   75.45  1.3176 0.270004   
+Origin.Site                   2   258.4  129.21  2.2564 0.107292   
+Transplant.Zone               1   232.3  232.33  4.0574 0.045272 * 
+Origin.Zone                   1   404.4  404.43  7.0628 0.008484 **
+Transplant.Zone:Origin.Zone   1   208.3  208.33  3.6381 0.057854 . 
+Residuals                   207 11853.2   57.26                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = num.live.stems"
+Analysis of Variance Table
+
+Response: y
+                             Df Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2 2176.6 1088.32 41.0860 9.403e-16 ***
+Origin.Site                   2    8.1    4.03  0.1520    0.8591    
+Transplant.Zone               1  921.9  921.85 34.8017 1.471e-08 ***
+Origin.Zone                   1    3.6    3.58  0.1352    0.7134    
+Transplant.Zone:Origin.Zone   1   26.5   26.50  1.0005    0.3184    
+Residuals                   207 5483.2   26.49                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = Total.biomass"
+Analysis of Variance Table
+
+Response: y
+                             Df Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2 2486.1 1243.03 26.0342 9.163e-11 ***
+Origin.Site                   2  309.7  154.86  3.2435 0.0411117 *  
+Transplant.Zone               1  729.0  729.05 15.2692 0.0001279 ***
+Origin.Zone                   1   55.0   54.98  1.1515 0.2845432    
+Transplant.Zone:Origin.Zone   1   42.1   42.05  0.8807 0.3491402    
+Residuals                   198 9453.7   47.75                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = Aboveground.Biomass..g."
+Analysis of Variance Table
+
+Response: y
+                             Df  Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2  681.82  340.91 29.6286 5.453e-12 ***
+Origin.Site                   2  120.40   60.20  5.2322 0.0061013 ** 
+Transplant.Zone               1  173.74  173.74 15.1001 0.0001388 ***
+Origin.Zone                   1   23.29   23.29  2.0239 0.1564070    
+Transplant.Zone:Origin.Zone   1   17.94   17.94  1.5596 0.2131945    
+Residuals                   199 2289.71   11.51                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = Belowground.Biomass..g."
+Analysis of Variance Table
+
+Response: y
+                             Df  Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2  580.78 290.391 19.3883 1.928e-08 ***
+Origin.Site                   2   52.65  26.323  1.7575    0.1751    
+Transplant.Zone               1  253.80 253.805 16.9456 5.564e-05 ***
+Origin.Zone                   1   19.92  19.920  1.3300    0.2501    
+Transplant.Zone:Origin.Zone   1    6.96   6.963  0.4649    0.4961    
+Residuals                   206 3085.38  14.978                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "response = Above.below"
+Analysis of Variance Table
+
+Response: y
+                             Df  Sum Sq Mean Sq F value    Pr(>F)    
+Transplant.Site               2  2.2407 1.12036  7.0356 0.0011173 ** 
+Origin.Site                   2  2.3002 1.15012  7.2225 0.0009386 ***
+Transplant.Zone               1  0.1327 0.13270  0.8333 0.3624315    
+Origin.Zone                   1  1.3544 1.35444  8.5055 0.0039493 ** 
+Transplant.Zone:Origin.Zone   1  0.8299 0.82989  5.2115 0.0235003 *  
+Residuals                   198 31.5299 0.15924                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

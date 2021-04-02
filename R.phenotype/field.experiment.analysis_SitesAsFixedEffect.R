@@ -7,7 +7,7 @@ dat <- dat[dat$Survival.Yes==1,] # missing plots are removed.
 
 stats1 <- c()
 
-sink("output.phenotype/field.experiment.analysis.SitesAsRandomEffects.txt")
+sink("output.phenotype/field.experiment.analysis.SitesAsFixedEffects.txt")
 y <- c("max.Height","Average.Height","num.live.stems","Total.biomass","Aboveground.Biomass..g.","Belowground.Biomass..g.","Above.below")
 for(i in 1:length(y))
 {
@@ -16,11 +16,12 @@ tmp <- dat[,c("Origin.Zone","Transplant.Zone","Transplant.Site","Origin.Site","P
 tmp$y <- dat[,colnames(dat)==as.character(y[i])]
 tmp <- tmp[!is.na(tmp$y),]
 tmp$y <- as.numeric(as.character(tmp$y))
-m <- lmer(y~Transplant.Zone*Origin.Zone + (1|Transplant.Site) +  (1|Origin.Site),data=tmp)
+m <- lm(y~Transplant.Site + Origin.Site+ Transplant.Zone*Origin.Zone,data=tmp)
 print(anova(m))
-stats1 <- rbind(stats1,data.frame(y=y[i],x=c("Transplant.Zone","Origin.Zone","Interaction"),p=round(anova(m)$'Pr(>F)',3)))
+stats1 <- rbind(stats1,data.frame(y=y[i],x=c("Transplant Site","Origin Site", "Transplant.Zone","Origin.Zone","Interaction"),p=round(anova(m)$'Pr(>F)'[1:5],3)))
 }
 sink()
+
 ### Field experiment - ANOVAs using siteXzone as "home vs away"
 dat$Origin.Zone.Site <- factor(paste(dat$Origin.Zone,dat$Origin.Site,sep="."))
 dat$Transplant.Zone.Site <- factor(paste(dat$Transplant.Zone,dat$Transplant.Site,sep="."))
