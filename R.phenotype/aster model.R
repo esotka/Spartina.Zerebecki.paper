@@ -42,7 +42,7 @@ out3b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Transplant.Zon
 out4b <- aster(resp ~ varb + Origin.Site + Transplant.Site + fit:(Transplant.Zone * Origin.Zone), pred, fam, varb, id, root, data = redat)
 
 anova(out0,out0b) # Origin Site effect
-anova(out0,out0c) # Origin Zone effect
+anova(out0,out0c) # Transplant Site effect
 anova(out1b,out3b) # Origin Zone effect
 anova(out2b,out3b) # Transplant Zone effect
 anova(out3b,out4b) ## additve vs interactive model
