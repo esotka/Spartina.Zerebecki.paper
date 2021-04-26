@@ -57,6 +57,8 @@ This code plots the following response variables:
 ***field.experiment.analysis_SitesAsFixedEffect.R***  
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  
+***output.phenotype/field.experiment.analysis.SitesAsRandomEffects.txt***  
+***output.phenotype/field.experiment.analysis.SitesAsFixedEffects.txt***  
 
 This code generates the aster analysis (surv + seed # = fitness)  
 ***R.phenotype/aster model.R***  
