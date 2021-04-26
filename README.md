@@ -54,6 +54,7 @@ This code plots the following response variables:
 ***data.phenotype/tall.short_flowertotals_102020.csv***  
 ***data.phenotype/Tall.Short_field_survivalanalysis_011618.csv***  
 ***R.phenotype/field.experiment.analysis.R***  
+***field.experiment.analysis_SitesAsFixedEffect.R***  
 ***R.phenotype/prettyfigs-experiment.R***  
 ***output.phenotype/prettyfigs-experiment.png***  
 
